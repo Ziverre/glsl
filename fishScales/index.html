@@ -1,1 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Fish Scales</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body>
+    <h1>Fish Scales</h1>
+    <canvas id="drawingarea" width="480" height="360" style="border: 1px solid black;" data-shader="fishScales.fs.js"></canvas>
+    <script id="vs" type="x-shader/x-fragment">
+        attribute vec4 position;
 
+        void main() {
+            gl_Position = position;
+        }
+    </script>
+    <script id="fs" type="x-shader/x-fragment">
+    </script>
+    <script src="../main.js" type="module"></script>
+    <h2>Details</h2>
+    <p>Patterns are repeated units, therefore in order to implement a pattern, its unit needs to be implemented first.</p>
+    <p>In this fish scales pattern, the unit is nothing but half a circle:<br>
+        <img src="half_circle.png" alt="Image of half a circle facing downwards."><br>
+        Which is shifted in X axis by half a unit per row.
+    </p>
+    <h2>Implementation (WIP)</h2>
+    <p>The source code for the fragment shader can be viewed here:<br>
+    <a href="https://github.com/Ziverre/glsl/blob/main/fishScales/fishScales.fs.js">https://github.com/Ziverre/glsl/blob/main/fishScales/fishScales.fs.js</a>
+    </p>
+    <h2>Reference</h2>
+    <i><a href="https://thebookofshaders.com/09/">https://thebookofshaders.com/09/</a><br>
+        <a href="https://thebookofshaders.com/09/geometricpatters.png">https://thebookofshaders.com/09/geometricpatters.png</a>
+    </i>
+</body>
+</html>
